@@ -1,5 +1,6 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        nrepl/nrepl {:mvn/version "0.5.3"}
         com.twelvemonkeys.imageio/imageio-pnm {:mvn/version "3.5"}
         com.twelvemonkeys.imageio/imageio-jpeg {:mvn/version "3.5"}}
  :aliases
