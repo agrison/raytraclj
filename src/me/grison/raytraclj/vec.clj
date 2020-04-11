@@ -15,6 +15,9 @@
 (defn + [v1 v2]
   (mute clj/+ v1 v2))
 
+(defn - [v1 v2]
+  (mute clj/- v1 v2))
+
 (defn * [v1 v2]
   (mute clj/* v1 v2))
 
@@ -23,6 +26,9 @@
 
 (defn / [v1 v2]
   (mute clj// v1 v2))
+
+(defn • [v1 v2]
+  (reduce clj/+ (* v1 v2)))
 
 (defn unit-vector [v]
   (vec (for [elem v]

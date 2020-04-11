@@ -13,12 +13,14 @@
     (img/save-jpg ppm path)))
 
 (defn color [r]
-  (let [unit-direction (vec/unit-vector (ray/direction r))
-        t (* 0.5 (+ (vec/y unit-direction) 1.0))]
-    (vec/+ (vec/*1 [1.0 1.0 1.0] (- 1.0 t))
-           (vec/*1 [0.5 0.7 1.0] t))))
+  (if (ray/hit-sphere [0 0 -1] 0.5 r)
+    [1 0 0]
+    (let [unit-direction (vec/unit-vector (ray/direction r))
+          t (* 0.5 (+ (vec/y unit-direction) 1.0))]
+      (vec/+ (vec/*1 [1.0 1.0 1.0] (- 1.0 t))
+             (vec/*1 [0.5 0.7 1.0] t)))))
 
-(defn simple-background []
+(defn simple-background-and-sphere []
   (let [nx 200 ny 100
         lower-left-corner [-2.0 -1.0 -1.0]
         horizontal [4.0 0.0 0.0]
@@ -37,8 +39,8 @@
                           ig (int (* 255.99 (vec/y col)))
                           ib (int (* 255.99 (vec/z col)))]]
                 (vec/string [ir ig ib]))
-              "/mnt/c/temp/background.jpg")))
+              "/mnt/c/temp/background-sphere.jpg")))
 
 
 ; run this
-(comment (simple-background))
+(comment (simple-background-and-sphere))
