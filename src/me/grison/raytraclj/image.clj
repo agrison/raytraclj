@@ -1,7 +1,8 @@
 (ns me.grison.raytraclj.image
   (:require [clojure.java.io :as io])
   (:import javax.imageio.ImageIO
-           (java.awt.image BufferedImage)))
+           (java.awt.image BufferedImage)
+           (java.io ByteArrayInputStream)))
 
 (defn load-ppm [^String path]
   (println "Loading PPM: " path)
@@ -16,8 +17,11 @@
   (println "Writing JPEG: " path)
   (ImageIO/write img "JPEG" (io/file path)))
 
-; not very efficient for now
+(defn ppm->image [^String ppm]
+  (with-open [in (java.io.ByteArrayInputStream. (.getBytes ppm))]
+    (ImageIO/read in)))
+
 (defn save-jpg [^String ppm ^String path]
-  (save-ppm ppm (str path ".ppm"))
-  (Thread/sleep 500)
-  (store-jpeg (load-ppm (str path ".ppm")) (str path ".jpg")))
+  ;(save-ppm ppm (str path ".ppm"))
+  ;(Thread/sleep 500)
+  (store-jpeg (ppm->image ppm) path))
