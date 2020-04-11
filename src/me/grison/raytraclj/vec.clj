@@ -25,8 +25,23 @@
     (map #(clj/* v2 %) v1)
     (mute clj/* v1 v2)))
 
+(def EPSILON 0.00000000001)
+(defn safe-divide [a b]
+  (clj// a (clj/+ b EPSILON)))
+
+;(defn / [v1 v2]
+;  (if (number? v2)
+;    (if (zero? v2)
+;      v1
+;      (map #(clj// v2 %) v1))
+;    (mute clj// v1 v2)))
+
 (defn / [v1 v2]
-  (mute clj// v1 v2))
+  (if (number? v2)
+    (if (zero? v2)
+      1
+      (* v1 (clj// 1 v2)))
+    (mute clj// v1 v2)))
 
 (defn • [v1 v2]
   (reduce clj/+ (* v1 v2)))
