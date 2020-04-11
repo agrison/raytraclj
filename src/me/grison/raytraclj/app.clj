@@ -1,3 +1,2 @@
 (ns me.grison.raytraclj.app
-  (:gen-class))
-
+  (:require [me.grison.raytraclj.core :as core]))

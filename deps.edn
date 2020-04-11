@@ -1,20 +1,31 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}
-        nrepl/nrepl {:mvn/version "0.5.3"}
-        com.twelvemonkeys.imageio/imageio-pnm {:mvn/version "3.5"}
-        com.twelvemonkeys.imageio/imageio-jpeg {:mvn/version "3.5"}}
+ :deps  {org.clojure/clojure                    {:mvn/version "1.10.1"}
+         nrepl/nrepl                            {:mvn/version "0.5.3"}
+         com.twelvemonkeys.imageio/imageio-pnm  {:mvn/version "3.5"}
+         com.twelvemonkeys.imageio/imageio-jpeg {:mvn/version "3.5"}}
  :aliases
- {:test {:extra-paths ["test"]
-         :extra-deps {org.clojure/test.check {:mvn/version "1.0.0"}}}
-  :runner
-  {:extra-deps {com.cognitect/test-runner
-                {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
-   :main-opts ["-m" "cognitect.test-runner"
-               "-d" "test"]}
-  :jar {:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
-        :main-opts ["-m" "hf.depstar.jar" "raytraclj.jar"]}
-  :install {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
-            :main-opts ["-m" "deps-deploy.deps-deploy" "install" "raytraclj.jar"]}
-  :deploy {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
-           :main-opts ["-m" "deps-deploy.deps-deploy" "deploy" "raytraclj.jar"]}}}
+        {:test    {:extra-paths ["test"]
+                   :extra-deps  {org.clojure/test.check {:mvn/version "1.0.0"}}}
+         :runner
+                  {:extra-deps {com.cognitect/test-runner
+                                {:git/url "https://github.com/cognitect-labs/test-runner"
+                                 :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
+                   :main-opts  ["-m" "cognitect.test-runner"
+                                "-d" "test"]}
+         :jar     {:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
+                   :main-opts  ["-m" "hf.depstar.jar" "raytraclj.jar"]}
+         :install {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
+                   :main-opts  ["-m" "deps-deploy.deps-deploy" "install" "raytraclj.jar"]}
+         :deploy  {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
+                   :main-opts  ["-m" "deps-deploy.deps-deploy" "deploy" "raytraclj.jar"]}
+         :native-image
+                  {:main-opts ["-m clj.native-image me.grison.raytraclj.core"
+                               "--initialize-at-build-time"
+                               ;; optional native image name override
+                               "-H:Name=core"]
+                   :jvm-opts  ["-Dclojure.compiler.direct-linking=true"]
+                   :extra-deps
+                              {clj.native-image
+                               {:git/url "https://github.com/taylorwood/clj.native-image.git"
+                                :sha     "7708e7fd4572459c81f6a6b8e44c96f41cdd92d4"}}}}
+ }
