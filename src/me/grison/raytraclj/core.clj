@@ -21,4 +21,5 @@
         ppm (str header body)]
     (img/save-jpg ppm "/mnt/c/temp/first")))
 
+; run this
 (comment (hello-ppm))
