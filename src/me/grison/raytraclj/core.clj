@@ -52,16 +52,18 @@
         (swap! col vec/+ (color r world 0))))
     (vec// @col (float ns))))
 
-(defn simple-background-and-sphere-metal []
+(defn simple-background-and-sphere-dielectric []
   (let [nx 600 ny (/ nx 2) ns 30
         cam (camera/make [-2.0 -1.0 -1.0]
                          [4.0 0.0 0.0]
                          [0.0 2.0 0.0]
                          [0.0 0.0 0.0])
-        world [(hitable/->Sphere [0 0 -1] 0.5 (material/->Lambertian [0.8 0.3 0.3]))
+        world [(hitable/->Sphere [0 0 -1] 0.5 (material/->Lambertian [0.1 0.2 0.5]))
                (hitable/->Sphere [0 -100.5 -1] 100 (material/->Lambertian [0.8 0.8 0.0]))
                (hitable/->Sphere [1 0 -1] 0.5 (material/->Metal [0.8 0.6 0.2] 1.0))
-               (hitable/->Sphere [-1 0 -1] 0.5 (material/->Metal [0.8 0.8 0.8] 0.3))
+               ;(hitable/->Sphere [-1 0 -1] 0.5 (material/->Metal [0.8 0.8 0.8] 0.3))
+               (hitable/->Sphere [-1 0 -1] 0.5 (material/->Dielectric 1.5))
+               (hitable/->Sphere [-1 0 -1] -0.45 (material/->Dielectric 1.5))
                ]]
     (raytrace nx ny
               (for [j (range (dec ny) -1 -1)
@@ -72,10 +74,10 @@
                           ig (int (* 255.99 (vec/y corrected-col)))
                           ib (int (* 255.99 (vec/z corrected-col)))]]
                 (vec/string [ir ig ib]))
-              "/mnt/c/temp/background-sphere-metal.jpg")))
+              "/mnt/c/temp/background-sphere-dielectric.jpg")))
 
 (defn -main [& args]
-  (time (simple-background-and-sphere-metal)))
+  (time (simple-background-and-sphere-dielectric)))
 
 
 

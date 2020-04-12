@@ -73,4 +73,13 @@
 (defn reflect [v n]
   (let [m (* n (clj/* (• v n) 2))]
     (- v m)))
-;/    [(clj/- x m) (clj/- y m) (clj/- z m)]))
+
+(defn refract [v n ni-over-nt]
+  (let [uv (unit-vector v)
+        dt (• uv n)
+        discriminant (clj/- 1.0
+                        (clj/* ni-over-nt ni-over-nt (clj/- 1 (clj/* dt dt))))]
+    (when (pos? discriminant)
+      (let [uv-ndt (- uv (* n dt))
+            n-discrim (* n (Math/sqrt discriminant))]
+        (- (* uv-ndt ni-over-nt) n-discrim)))))
