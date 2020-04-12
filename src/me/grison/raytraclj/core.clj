@@ -28,18 +28,13 @@
         (reset! p (rand-vec))))
     @p))
 
-(def BLAH (atom nil))
-
 (defn color [r world depth]
   (if-let [rec (hitable/hits world r 0.0001 Float/MAX_VALUE)]
     (let [res (material/scatter (:material rec) r rec)]
       (if (and (< depth 50) (:ok res))
-        ;(println "res: " res " world: " world " depth: " depth )
-        ;(reset! BLAH res)
         (vec/* (:attenuation res) (color (:scattered res) world (inc depth)))
         [0 0 0]))
-    (let [;_ (println "in color - r : " r)
-          unit-direction (vec/unit-vector (ray/direction r))
+    (let [unit-direction (vec/unit-vector (ray/direction r))
           t (* 0.5 (inc (vec/y unit-direction)))]
       (vec/+ (vec/* [1.0 1.0 1.0] (- 1.0 t))
              (vec/* [0.5 0.7 1.0] t)))))
@@ -53,22 +48,43 @@
         (swap! col vec/+ (color r world 0))))
     (vec// @col (float ns))))
 
-(defn simple-background-and-sphere-dielectric []
+(defn make-world []
+  (let [world (atom [(hitable/->Sphere [0 -1000 0] 1000 (material/->Lambertian [0.5 0.5 0.5]))])
+        drand #(* (rand) (rand))]
+    (doseq [a (range -11 11)
+            b (range -11 11)
+            :let [choose-mat (rand)
+                  center [(+ a (* 0.9 (rand))) 0.2 (+ b (* 0.9 (rand)))]]]
+      (if (> (vec/length (vec/- center [4 0.2 0])) 0.9)
+        (cond
+          (< choose-mat 0.8)                                ; diffuse
+          (swap! world conj (hitable/->Sphere center 0.2 (material/->Lambertian [(drand) (drand) (drand)])))
+
+          (< choose-mat 0.95)                               ;metal
+          (swap! world conj (hitable/->Sphere center 0.2 (material/->Metal [(* 0.5 (inc (rand)))
+                                                                            (* 0.5 (inc (rand)))
+                                                                            (* 0.5 (rand))]
+                                                                           (rand))))
+          :else                                             ;glass
+          (swap! world conj (hitable/->Sphere center 0.2 (material/->Dielectric 1.5)))
+          )))
+    (swap! world conj (hitable/->Sphere [0 1 0] 1.0 (material/->Dielectric 1.5)))
+    (swap! world conj (hitable/->Sphere [-4 1 0] 1.0 (material/->Lambertian [0.4 0.2 0.1])))
+    (swap! world conj (hitable/->Sphere [4 1 0] 1.0 (material/->Metal [0.7 0.6 0.5] 0.0)))
+    @world))
+
+(comment (make-world))
+
+(defn final-scene []
   (me.grison.raytraclj.perf/init)
   (let [t1 (System/currentTimeMillis)
-        nx 500 ny (/ nx 2) ns 30
-        cam (camera/make [-2 2 1] [0 0 -1] [0 1 0] 30 (/ (float nx) (float ny)))
-        R (Math/cos (/ Math/PI 4))
-        world [
-               ;(hitable/->Sphere [(- R) 0 -1] R (material/->Lambertian [0 0 1]))
-               ;(hitable/->Sphere [R 0 -1] R (material/->Lambertian [1 0 0]))
-               (hitable/->Sphere [0 0 -1] 0.5 (material/->Lambertian [0.1 0.2 0.5]))
-               (hitable/->Sphere [0 -100.5 -1] 100 (material/->Lambertian [0.8 0.8 0.0]))
-               (hitable/->Sphere [1 0 -1] 0.5 (material/->Metal [0.8 0.6 0.2] 1.0))
-               ;(hitable/->Sphere [-1 0 -1] 0.5 (material/->Metal [0.8 0.8 0.8] 0.3))
-               (hitable/->Sphere [-1 0 -1] 0.5 (material/->Dielectric 1.5))
-               (hitable/->Sphere [-1 0 -1] -0.45 (material/->Dielectric 1.5))
-               ]]
+        nx (/ 120 2) ny (/ 80 2) ns 10
+        look-from [13 2 3]
+        look-at [0 0 0]
+        dist-to-focus 10
+        aperture 0.1
+        cam (camera/make look-from look-at [0 1 0] 20 (/ (float nx) (float ny)) aperture dist-to-focus)
+        world (make-world)]
     (raytrace nx ny
               (for [j (range (dec ny) -1 -1)
                     i (range 0 nx)
@@ -78,19 +94,13 @@
                           ig (int (* 255.99 (vec/y corrected-col)))
                           ib (int (* 255.99 (vec/z corrected-col)))]]
                 (vec/string [ir ig ib]))
-              "/mnt/c/temp/background-sphere-cam1.jpg")
+              "/mnt/c/temp/final2.jpg")
     (let [t2 (System/currentTimeMillis)
           total (/ (- t2 t1) 1000)]
       (println "-> rays/sec: " (me.grison.raytraclj.perf/rays-per-sec total)))))
 
-(comment (def flames (flames/start! {:port 54321, :host "localhost"})))
-
-(comment (flames/stop! flames))
 
 (defn -main [& args]
-  (time (simple-background-and-sphere-dielectric)))
+  (time (final-scene)))
 
 
-
-; run this
-;(comment (time (simple-background-and-sphere-surface-antialias)))
