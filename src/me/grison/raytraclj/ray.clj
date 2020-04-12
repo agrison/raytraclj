@@ -1,8 +1,10 @@
 (ns me.grison.raytraclj.ray
-  (:require [me.grison.raytraclj.vec :as vec]))
+  (:require [me.grison.raytraclj.vec :as vec]
+            [me.grison.raytraclj.perf :as perf]))
 
 (defn make
   [origin direction]
+  (perf/inc-rays)
   {:origin origin :direction direction})
 
 (defn origin [ray]

@@ -4,7 +4,8 @@
             [me.grison.raytraclj.ray :as ray]
             [me.grison.raytraclj.hitable :as hitable]
             [me.grison.raytraclj.camera :as camera]
-            [me.grison.raytraclj.material :as material])
+            [me.grison.raytraclj.material :as material]
+            [flames.core :as flames])
   (:gen-class))
 
 (defn ppm-header [width height]
@@ -53,12 +54,15 @@
     (vec// @col (float ns))))
 
 (defn simple-background-and-sphere-dielectric []
-  (let [nx 600 ny (/ nx 2) ns 30
-        cam (camera/make [-2.0 -1.0 -1.0]
-                         [4.0 0.0 0.0]
-                         [0.0 2.0 0.0]
-                         [0.0 0.0 0.0])
-        world [(hitable/->Sphere [0 0 -1] 0.5 (material/->Lambertian [0.1 0.2 0.5]))
+  (me.grison.raytraclj.perf/init)
+  (let [t1 (System/currentTimeMillis)
+        nx 500 ny (/ nx 2) ns 30
+        cam (camera/make [-2 2 1] [0 0 -1] [0 1 0] 30 (/ (float nx) (float ny)))
+        R (Math/cos (/ Math/PI 4))
+        world [
+               ;(hitable/->Sphere [(- R) 0 -1] R (material/->Lambertian [0 0 1]))
+               ;(hitable/->Sphere [R 0 -1] R (material/->Lambertian [1 0 0]))
+               (hitable/->Sphere [0 0 -1] 0.5 (material/->Lambertian [0.1 0.2 0.5]))
                (hitable/->Sphere [0 -100.5 -1] 100 (material/->Lambertian [0.8 0.8 0.0]))
                (hitable/->Sphere [1 0 -1] 0.5 (material/->Metal [0.8 0.6 0.2] 1.0))
                ;(hitable/->Sphere [-1 0 -1] 0.5 (material/->Metal [0.8 0.8 0.8] 0.3))
@@ -74,7 +78,14 @@
                           ig (int (* 255.99 (vec/y corrected-col)))
                           ib (int (* 255.99 (vec/z corrected-col)))]]
                 (vec/string [ir ig ib]))
-              "/mnt/c/temp/background-sphere-dielectric.jpg")))
+              "/mnt/c/temp/background-sphere-cam1.jpg")
+    (let [t2 (System/currentTimeMillis)
+          total (/ (- t2 t1) 1000)]
+      (println "-> rays/sec: " (me.grison.raytraclj.perf/rays-per-sec total)))))
+
+(comment (def flames (flames/start! {:port 54321, :host "localhost"})))
+
+(comment (flames/stop! flames))
 
 (defn -main [& args]
   (time (simple-background-and-sphere-dielectric)))

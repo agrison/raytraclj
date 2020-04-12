@@ -27,17 +27,6 @@
     (map #(clj/* v2 %) v1)
     (mute clj/* v1 v2)))
 
-(def EPSILON 0.00000000001)
-(defn safe-divide [a b]
-  (clj// a (clj/+ b EPSILON)))
-
-;(defn / [v1 v2]
-;  (if (number? v2)
-;    (if (zero? v2)
-;      v1
-;      (map #(clj// v2 %) v1))
-;    (mute clj// v1 v2)))
-
 (defn / [v1 v2]
   (if (number? v2)
     (if (zero? v2)
@@ -48,16 +37,18 @@
 (defn • [v1 v2]
   (reduce clj/+ (* v1 v2)))
 
+(defn ⨯ [[x1 y1 z1] [x2 y2 z3]]
+  [(clj/- (clj/* y1 z3) (clj/* z1 y2))
+   (clj/- (clj/* z1 x2) (clj/* x1 z3))
+   (clj/- (clj/* x1 y2) (clj/* y1 x2))])
+
 (defn squared-length [[x y z]]
-  ;(println "squared-length: " [x y z])
   (clj/+ (clj/* x x) (clj/* y y) (clj/* z z)))
 
 (defn length [v]
-  ;(println "length: " v)
   (Math/sqrt (squared-length v)))
 
 (defn unit-vector [v]
-  ;(println "unit vector: " v)
   (let [l (length v)]
     (map #(clj// % l) v)))
 
