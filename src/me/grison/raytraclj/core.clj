@@ -6,7 +6,10 @@
             [me.grison.raytraclj.camera :as camera]
             [me.grison.raytraclj.material :as material]
             [flames.core :as flames])
-  (:gen-class))
+  (:gen-class)
+  (:import (java.awt.image BufferedImage)
+           (javax.imageio ImageIO)
+           (java.io File)))
 
 (defn ppm-header [width height]
   (str "P3\n" width " " height "\n255\n"))
@@ -16,6 +19,22 @@
         body (clojure.string/join pixels)
         ppm (str header body)]
     (img/save-jpg ppm path)))
+
+(defn raytrace-direct [nx ny pixels path]
+  (let [img (BufferedImage. nx ny BufferedImage/TYPE_INT_RGB)]
+    (println "Writing pixels...")
+    (doseq [px pixels]
+      (.setRGB img (:i px) (:j px) (:c px)))
+    (println "Rotating... because I'm lazy")
+    (let [rotated (BufferedImage. nx ny BufferedImage/TYPE_INT_RGB)
+          graphic (.createGraphics rotated)]
+      (do
+        (.rotate graphic (Math/toRadians 180) (/ nx 2) (/ ny 2))
+        (.drawImage graphic img 0 0 nx (- ny) nil)
+        ;(.drawImage graphic img nil 0 0)
+        (.dispose graphic)
+        (println "Saving to: " path)
+        (ImageIO/write rotated "png" (File. path))))))
 
 (defn random-in-unit-sphere []
   (let [rand-vec #(vec/-
@@ -75,26 +94,33 @@
 
 (comment (make-world))
 
+(defn single-px [world cam nx ny ns i j]
+  (let [col (evolve-col world cam nx ny ns i j)
+        corrected-col (map #(Math/sqrt %) col)
+        ir (int (* 255.99 (vec/x corrected-col)))
+        ig (int (* 255.99 (vec/y corrected-col)))
+        ib (int (* 255.99 (vec/z corrected-col)))]
+    {:i i :j j :c (bit-or (bit-shift-left ir 16)
+                          (bit-shift-left ig 8)
+                          ib)}))
+
 (defn final-scene []
   (me.grison.raytraclj.perf/init)
   (let [t1 (System/currentTimeMillis)
-        nx (/ 120 2) ny (/ 80 2) ns 10
+        nx (* 120 6) ny (* 80 6) ns 10
         look-from [13 2 3]
         look-at [0 0 0]
         dist-to-focus 10
         aperture 0.1
         cam (camera/make look-from look-at [0 1 0] 20 (/ (float nx) (float ny)) aperture dist-to-focus)
-        world (make-world)]
-    (raytrace nx ny
-              (for [j (range (dec ny) -1 -1)
-                    i (range 0 nx)
-                    :let [col (evolve-col world cam nx ny ns i j)
-                          corrected-col (map #(Math/sqrt %) col)
-                          ir (int (* 255.99 (vec/x corrected-col)))
-                          ig (int (* 255.99 (vec/y corrected-col)))
-                          ib (int (* 255.99 (vec/z corrected-col)))]]
-                (vec/string [ir ig ib]))
-              "/mnt/c/temp/final2.jpg")
+        world (make-world)
+        all-pixels (into [] (for [j (range (dec ny) -1 -1)
+                                  i (range 0 nx)]
+                              {:i i :j j}))]
+    (println "Starting raytracing for " (count all-pixels) " pixels...")
+    (raytrace-direct nx ny
+                     (pmap #(single-px world cam nx ny ns (:i %) (:j %)) all-pixels)
+                     "/mnt/c/temp/final-ir.png")
     (let [t2 (System/currentTimeMillis)
           total (/ (- t2 t1) 1000)]
       (println "-> rays/sec: " (me.grison.raytraclj.perf/rays-per-sec total)))))
