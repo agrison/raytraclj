@@ -3,7 +3,8 @@
             [me.grison.raytraclj.vec :as vec]
             [me.grison.raytraclj.ray :as ray]
             [me.grison.raytraclj.hitable :as hitable]
-            [me.grison.raytraclj.camera :as camera])
+            [me.grison.raytraclj.camera :as camera]
+            [me.grison.raytraclj.material :as material])
   (:gen-class))
 
 (defn ppm-header [width height]
@@ -26,11 +27,18 @@
         (reset! p (rand-vec))))
     @p))
 
-(defn color [r world]
+(def BLAH (atom nil))
+
+(defn color [r world depth]
   (if-let [rec (hitable/hits world r 0.0001 Float/MAX_VALUE)]
-    (let [target (vec/+ (vec/+ (:p rec) (:normal rec)) (random-in-unit-sphere))]
-      (vec/* (color (ray/make (:p rec) (vec/- target (:p rec))) world) 0.5))
-    (let [unit-direction (vec/unit-vector (ray/direction r))
+    (let [res (material/scatter (:material rec) r rec)]
+      (if (and (< depth 50) (:ok res))
+        ;(println "res: " res " world: " world " depth: " depth )
+        ;(reset! BLAH res)
+        (vec/* (:attenuation res) (color (:scattered res) world (inc depth)))
+        [0 0 0]))
+    (let [;_ (println "in color - r : " r)
+          unit-direction (vec/unit-vector (ray/direction r))
           t (* 0.5 (inc (vec/y unit-direction)))]
       (vec/+ (vec/* [1.0 1.0 1.0] (- 1.0 t))
              (vec/* [0.5 0.7 1.0] t)))))
@@ -41,17 +49,20 @@
       (let [u (/ (+ i (rand)) (float nx))
             v (/ (+ j (rand)) (float ny))
             r (camera/get-ray cam u v)]
-        (swap! col vec/+ (color r world))))
+        (swap! col vec/+ (color r world 0))))
     (vec// @col (float ns))))
 
-(defn simple-background-and-sphere-surface-antialias []
-  (let [nx 800 ny (/ nx 2) ns 30
+(defn simple-background-and-sphere-metal []
+  (let [nx 600 ny (/ nx 2) ns 30
         cam (camera/make [-2.0 -1.0 -1.0]
                          [4.0 0.0 0.0]
                          [0.0 2.0 0.0]
                          [0.0 0.0 0.0])
-        world [(hitable/->Sphere [0 0 -1] 0.5)
-               (hitable/->Sphere [0 -100.5 -1] 100)]]
+        world [(hitable/->Sphere [0 0 -1] 0.5 (material/->Lambertian [0.8 0.3 0.3]))
+               (hitable/->Sphere [0 -100.5 -1] 100 (material/->Lambertian [0.8 0.8 0.0]))
+               (hitable/->Sphere [1 0 -1] 0.5 (material/->Metal [0.8 0.6 0.2] 1.0))
+               (hitable/->Sphere [-1 0 -1] 0.5 (material/->Metal [0.8 0.8 0.8] 0.3))
+               ]]
     (raytrace nx ny
               (for [j (range (dec ny) -1 -1)
                     i (range 0 nx)
@@ -61,10 +72,10 @@
                           ig (int (* 255.99 (vec/y corrected-col)))
                           ib (int (* 255.99 (vec/z corrected-col)))]]
                 (vec/string [ir ig ib]))
-              "/mnt/c/temp/background-sphere-surface-antialias-diffuse-2.jpg")))
+              "/mnt/c/temp/background-sphere-metal.jpg")))
 
 (defn -main [& args]
-  (time (simple-background-and-sphere-surface-antialias)))
+  (time (simple-background-and-sphere-metal)))
 
 
 

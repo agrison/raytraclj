@@ -18,7 +18,9 @@
   (mute clj/+ v1 v2))
 
 (defn - [v1 v2]
-  (mute clj/- v1 v2))
+  (if (number? v2)
+    (map #(clj/- v2 %) v1)
+    (mute clj/- v1 v2)))
 
 (defn * [v1 v2]
   (if (number? v2)
@@ -47,12 +49,15 @@
   (reduce clj/+ (* v1 v2)))
 
 (defn squared-length [[x y z]]
+  ;(println "squared-length: " [x y z])
   (clj/+ (clj/* x x) (clj/* y y) (clj/* z z)))
 
 (defn length [v]
+  ;(println "length: " v)
   (Math/sqrt (squared-length v)))
 
 (defn unit-vector [v]
+  ;(println "unit vector: " v)
   (let [l (length v)]
     (map #(clj// % l) v)))
 
@@ -64,3 +69,8 @@
 
 (defn z [v]
   (last v))
+
+(defn reflect [v n]
+  (let [m (* n (clj/* (• v n) 2))]
+    (- v m)))
+;/    [(clj/- x m) (clj/- y m) (clj/- z m)]))
