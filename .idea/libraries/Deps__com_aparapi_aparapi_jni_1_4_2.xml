@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: com.aparapi/aparapi-jni:1.4.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/aparapi/aparapi-jni/1.4.2/aparapi-jni-1.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: org.apache.bcel/bcel:6.4.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/bcel/bcel/6.4.1/bcel-6.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

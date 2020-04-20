@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: com.twelvemonkeys.imageio/imageio-jpeg:3.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/twelvemonkeys/imageio/imageio-jpeg/3.5/imageio-jpeg-3.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -4,8 +4,7 @@
             [me.grison.raytraclj.ray :as ray]
             [me.grison.raytraclj.hitable :as hitable]
             [me.grison.raytraclj.camera :as camera]
-            [me.grison.raytraclj.material :as material]
-            [flames.core :as flames])
+            [me.grison.raytraclj.material :as material])
   (:gen-class)
   (:import (java.awt.image BufferedImage)
            (javax.imageio ImageIO)
@@ -21,31 +20,19 @@
     (img/save-jpg ppm path)))
 
 (defn raytrace-direct [nx ny pixels path]
-  (let [img (BufferedImage. nx ny BufferedImage/TYPE_INT_RGB)]
+  (let [img (BufferedImage. nx ny BufferedImage/TYPE_INT_RGB)
+        data (.getData (.getDataBuffer (.getRaster img)))]
     (println "Writing pixels...")
     (doseq [px pixels]
       (.setRGB img (:i px) (:j px) (:c px)))
-    (println "Rotating... because I'm lazy")
-    (let [rotated (BufferedImage. nx ny BufferedImage/TYPE_INT_RGB)
-          graphic (.createGraphics rotated)]
-      (do
-        (.rotate graphic (Math/toRadians 180) (/ nx 2) (/ ny 2))
-        (.drawImage graphic img 0 0 nx (- ny) nil)
-        ;(.drawImage graphic img nil 0 0)
-        (.dispose graphic)
-        (println "Saving to: " path)
-        (ImageIO/write rotated "png" (File. path))))))
+    (println "Saving to: " path)
+    (ImageIO/write img "png" (File. path))))
 
 (defn random-in-unit-sphere []
-  (let [rand-vec #(vec/-
-                    (vec/* [(rand) (rand) (rand)] 2.0)
-                    [1.0 1.0 1.0])
-        p (atom nil)]
-    (do
-      (reset! p (rand-vec))
-      (while (>= (vec/squared-length @p) 1.0)
-        (reset! p (rand-vec))))
-    @p))
+  (loop [p (vec/- (vec/* [(rand) (rand) (rand)] 2.0) [1.0 1.0 1.0])]
+    (if (> (vec/squared-length p) 1.0)
+      p
+      (recur (vec/- (vec/* [(rand) (rand) (rand)] 2.0) [1.0 1.0 1.0])))))
 
 (defn color [r world depth]
   (if-let [rec (hitable/hits world r 0.0001 Float/MAX_VALUE)]
@@ -87,6 +74,10 @@
           :else                                             ;glass
           (swap! world conj (hitable/->Sphere center 0.2 (material/->Dielectric 1.5)))
           )))
+    ;(swap! world conj (hitable/->Sphere [0 0 0] 1.45 (material/->Dielectric 1.5)))
+    ;(swap! world conj (hitable/->Sphere [0 0 0] -1.40 (material/->Dielectric 1.5)))
+    ;(comment  (time (final-scene (* 128 3) (* 80 3) 50 "/mnt/c/temp/final-ir-6.png"))
+    ;          )
     (swap! world conj (hitable/->Sphere [0 1 0] 1.0 (material/->Dielectric 1.5)))
     (swap! world conj (hitable/->Sphere [-4 1 0] 1.0 (material/->Lambertian [0.4 0.2 0.1])))
     (swap! world conj (hitable/->Sphere [4 1 0] 1.0 (material/->Metal [0.7 0.6 0.5] 0.0)))
@@ -94,20 +85,20 @@
 
 (comment (make-world))
 
-(defn single-px [world cam nx ny ns i j]
+(defn raytrace-px! [img world cam nx ny ns i j]
   (let [col (evolve-col world cam nx ny ns i j)
         corrected-col (map #(Math/sqrt %) col)
         ir (int (* 255.99 (vec/x corrected-col)))
         ig (int (* 255.99 (vec/y corrected-col)))
         ib (int (* 255.99 (vec/z corrected-col)))]
-    {:i i :j j :c (bit-or (bit-shift-left ir 16)
-                          (bit-shift-left ig 8)
-                          ib)}))
+    (.setRGB img i (- (dec ny) j) (bit-or (bit-shift-left ir 16)
+                                          (bit-shift-left ig 8)
+                                          ib))))
 
-(defn final-scene []
-  (me.grison.raytraclj.perf/init)
-  (let [t1 (System/currentTimeMillis)
-        nx (* 120 6) ny (* 80 6) ns 10
+(defn final-scene [nx ny ns path]
+  (let [current-px (make-array Integer/TYPE 1)
+        img (BufferedImage. nx ny BufferedImage/TYPE_INT_RGB)
+        t1 (System/currentTimeMillis)
         look-from [13 2 3]
         look-at [0 0 0]
         dist-to-focus 10
@@ -116,17 +107,19 @@
         world (make-world)
         all-pixels (into [] (for [j (range (dec ny) -1 -1)
                                   i (range 0 nx)]
-                              {:i i :j j}))]
-    (println "Starting raytracing for " (count all-pixels) " pixels...")
-    (raytrace-direct nx ny
-                     (pmap #(single-px world cam nx ny ns (:i %) (:j %)) all-pixels)
-                     "/mnt/c/temp/final-ir.png")
-    (let [t2 (System/currentTimeMillis)
-          total (/ (- t2 t1) 1000)]
-      (println "-> rays/sec: " (me.grison.raytraclj.perf/rays-per-sec total)))))
+                              {:i i :j j}))
+        total-px (count all-pixels)]
+    (println "Starting raytracing for " total-px " pixels...")
+    (doseq [_ (pmap #(raytrace-px! img world cam nx ny ns (:i %) (:j %)) all-pixels)]
+      (aset current-px 0 (inc (aget current-px 0)))
+      (when (zero? (mod (aget current-px 0) (/ total-px 10)))
+        (println (int (* (/ (aget current-px 0) total-px) 100)) "% - " (int (/ (- (System/currentTimeMillis) t1) 1000)) "sec")))
+    (println "Saving image...")
+    (ImageIO/write img "png" (File. path))))
 
 
 (defn -main [& args]
-  (time (final-scene)))
+  (time (final-scene 1280 800 10 "/mnt/c/temp/final-ir-90.png"))
+  )
 
 

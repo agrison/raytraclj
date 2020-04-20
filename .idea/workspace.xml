@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9f07ee3-7d48-422e-8842-6de6776735bb" name="Default Changelist" comment="">
+    <list default="true" id="a435b798-879e-4571-b506-4fdfa557eb85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/clojure-deps.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_aparapi_aparapi_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_aparapi_aparapi_jni_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_common_common_image_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_common_common_io_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_common_common_lang_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_imageio_imageio_core_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_imageio_imageio_jpeg_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_imageio_imageio_metadata_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_twelvemonkeys_imageio_imageio_pnm_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__me_grison_raytraclj_my_kernel_1_0_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__nrepl_0_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__nrepl_bencode_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_apache_bcel_bcel_6_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_clojure_1_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_core_specs_alpha_0_2_44.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_spec_alpha_0_2_176.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_test_check_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_scala_lang_scala_library_2_13_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_clojure_1_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_core_specs_alpha_0_2_44.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_spec_alpha_0_2_176.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deps.edn" beforeDir="false" afterPath="$PROJECT_DIR$/deps.edn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raytraclj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/raytraclj.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/grison/raytraclj/core.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/grison/raytraclj/core.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/grison/raytraclj/material.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/grison/raytraclj/material.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/grison/raytraclj/perf.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/grison/raytraclj/ray.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/grison/raytraclj/ray.clj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,17 +45,32 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="DepsProjectDetails">
+    <option name="cachedModuleDetails">
+      <map>
+        <entry key="$PROJECT_DIR$/deps.edn">
+          <value>
+            <ModuleDetails>
+              <option name="details" value="{:paths [&quot;src&quot; &quot;resources&quot;], :deps {org.clojure/clojure {:mvn/version &quot;1.10.1&quot;}, nrepl/nrepl {:mvn/version &quot;0.5.3&quot;}, com.twelvemonkeys.imageio/imageio-pnm {:mvn/version &quot;3.5&quot;}, com.twelvemonkeys.imageio/imageio-jpeg {:mvn/version &quot;3.5&quot;}, com.aparapi/aparapi {:mvn/version &quot;2.0.0&quot;}, me.grison.raytraclj/my-kernel {:mvn/version &quot;1.0-SNAPSHOT&quot;}}, :aliases {:deps {:extra-deps {org.clojure/tools.deps.alpha {:mvn/version &quot;0.8.599&quot;}}}, :test {:extra-paths [&quot;test&quot;], :extra-deps {org.clojure/test.check {:mvn/version &quot;1.0.0&quot;}}}, :runner {:extra-deps {com.cognitect/test-runner {:git/url &quot;https://github.com/cognitect-labs/test-runner&quot;, :sha &quot;f7ef16dc3b8332b0d77bc0274578ad5270fbfedd&quot;}}, :main-opts [&quot;-m&quot; &quot;cognitect.test-runner&quot; &quot;-d&quot; &quot;test&quot;]}, :jar {:extra-deps {seancorfield/depstar {:mvn/version &quot;1.0.94&quot;}}, :main-opts [&quot;-m&quot; &quot;hf.depstar.jar&quot; &quot;raytraclj.jar&quot;]}, :install {:extra-deps {deps-deploy/deps-deploy {:mvn/version &quot;0.0.9&quot;}}, :main-opts [&quot;-m&quot; &quot;deps-deploy.deps-deploy&quot; &quot;install&quot; &quot;raytraclj.jar&quot;]}, :deploy {:extra-deps {deps-deploy/deps-deploy {:mvn/version &quot;0.0.9&quot;}}, :main-opts [&quot;-m&quot; &quot;deps-deploy.deps-deploy&quot; &quot;deploy&quot; &quot;raytraclj.jar&quot;]}, :native-image {:main-opts [&quot;-m clj.native-image me.grison.raytraclj.core&quot; &quot;--initialize-at-build-time&quot; &quot;-H:Name=core&quot;], :jvm-opts [&quot;-Dclojure.compiler.direct-linking=true&quot;], :extra-deps {clj.native-image/clj.native-image {:git/url &quot;https://github.com/taylorwood/clj.native-image.git&quot;, :sha &quot;7708e7fd4572459c81f6a6b8e44c96f41cdd92d4&quot;}}}}, :mvn/repos {&quot;central&quot; {:url &quot;https://repo1.maven.org/maven2/&quot;}, &quot;clojars&quot; {:url &quot;https://repo.clojars.org/&quot;}}, :system-aliases #{:test :deps}, :deps-tree {org.clojure/clojure {:mvn/version &quot;1.10.1&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\org\\clojure\\clojure\\1.10.1\\clojure-1.10.1.jar&quot;], :children (org.clojure/core.specs.alpha org.clojure/spec.alpha)}, com.twelvemonkeys.imageio/imageio-metadata {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\imageio\\imageio-metadata\\3.5\\imageio-metadata-3.5.jar&quot;], :dependents [com.twelvemonkeys.imageio/imageio-jpeg], :children ()}, org.clojure/core.specs.alpha {:mvn/version &quot;0.2.44&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\org\\clojure\\core.specs.alpha\\0.2.44\\core.specs.alpha-0.2.44.jar&quot;], :dependents [org.clojure/clojure], :children ()}, org.scala-lang/scala-library {:mvn/version &quot;2.13.1&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\org\\scala-lang\\scala-library\\2.13.1\\scala-library-2.13.1.jar&quot;], :dependents [com.aparapi/aparapi], :children ()}, org.clojure/spec.alpha {:mvn/version &quot;0.2.176&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\org\\clojure\\spec.alpha\\0.2.176\\spec.alpha-0.2.176.jar&quot;], :dependents [org.clojure/clojure], :children ()}, me.grison.raytraclj/my-kernel {:mvn/version &quot;1.0-SNAPSHOT&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\me\\grison\\raytraclj\\my-kernel\\1.0-SNAPSHOT\\my-kernel-1.0-SNAPSHOT.jar&quot;], :children ()}, com.aparapi/aparapi {:mvn/version &quot;2.0.0&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\aparapi\\aparapi\\2.0.0\\aparapi-2.0.0.jar&quot;], :children (org.scala-lang/scala-library org.apache.bcel/bcel com.aparapi/aparapi-jni)}, com.twelvemonkeys.imageio/imageio-pnm {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\imageio\\imageio-pnm\\3.5\\imageio-pnm-3.5.jar&quot;], :children (com.twelvemonkeys.imageio/imageio-core com.twelvemonkeys.common/common-io com.twelvemonkeys.common/common-image com.twelvemonkeys.common/common-lang)}, com.twelvemonkeys.imageio/imageio-core {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\imageio\\imageio-core\\3.5\\imageio-core-3.5.jar&quot;], :dependents [com.twelvemonkeys.imageio/imageio-pnm], :children ()}, org.apache.bcel/bcel {:mvn/version &quot;6.4.1&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\org\\apache\\bcel\\bcel\\6.4.1\\bcel-6.4.1.jar&quot;], :dependents [com.aparapi/aparapi], :children ()}, com.twelvemonkeys.imageio/imageio-jpeg {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\imageio\\imageio-jpeg\\3.5\\imageio-jpeg-3.5.jar&quot;], :children (com.twelvemonkeys.imageio/imageio-metadata)}, com.aparapi/aparapi-jni {:mvn/version &quot;1.4.2&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\aparapi\\aparapi-jni\\1.4.2\\aparapi-jni-1.4.2.jar&quot;], :dependents [com.aparapi/aparapi], :children ()}, nrepl/nrepl {:mvn/version &quot;0.5.3&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\nrepl\\nrepl\\0.5.3\\nrepl-0.5.3.jar&quot;], :children (nrepl/bencode)}, org.clojure/test.check {:mvn/version &quot;1.0.0&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\org\\clojure\\test.check\\1.0.0\\test.check-1.0.0.jar&quot;], :children ()}, com.twelvemonkeys.common/common-io {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\common\\common-io\\3.5\\common-io-3.5.jar&quot;], :dependents [com.twelvemonkeys.imageio/imageio-pnm], :children ()}, com.twelvemonkeys.common/common-image {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\common\\common-image\\3.5\\common-image-3.5.jar&quot;], :dependents [com.twelvemonkeys.imageio/imageio-pnm], :children ()}, nrepl/bencode {:mvn/version &quot;1.0.0&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\nrepl\\bencode\\1.0.0\\bencode-1.0.0.jar&quot;], :dependents [nrepl/nrepl], :children ()}, com.twelvemonkeys.common/common-lang {:mvn/version &quot;3.5&quot;, :deps/manifest :mvn, :paths [&quot;C:\\Users\\Alex\\.m2\\repository\\com\\twelvemonkeys\\common\\common-lang\\3.5\\common-lang-3.5.jar&quot;], :dependents [com.twelvemonkeys.imageio/imageio-pnm], :children ()}}, :test-paths [&quot;test&quot;]}" />
+              <option name="hash" value="64c718252d6af884bb5942e54a9c1699" />
+            </ModuleDetails>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Clojure Namespace" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chapter-11" />
+        <entry key="$PROJECT_DIR$" value="multi-threaded" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,8 +78,7 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1aOQBQ5MaZ8x2LOK4xoWH8ElTVB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1aU9K7wMRBzxEQtlPr4SUQs3lBZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -44,12 +90,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="cursive.last.file.extension.C\:/dev/github/raytraclj/src" value="clj" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/deps.edn" />
   </component>
-  <component name="ReplState" timestamp="1586732228910">{:repl-history {:ide [], :local [{:command &quot;(in-ns 'me.grison.raytraclj.core)&quot;, :offset 33, :ns &quot;user&quot;} {:command &quot;(interpose [100 200] \&quot; \&quot;)&quot;, :offset 25, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      body (clojure.string/join (for [j (range (dec ny) -1 -1)\n                                      i (range 0 nx)\n                                      :let [r (/ i nx)\n                                            g (/ j ny)\n                                            b 0.2\n                                            ir (int (* 255.99 r))\n                                            ig (int (* 255.99 g))\n                                            ib (int (* 255.99 b))]]\n                                  (str ir \&quot; \&quot; ig \&quot; \&quot; ib \&quot;\\n\&quot;)))]\n  {:header header :body body})&quot;, :offset 643, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (/ i nx)\n                         g (/ j ny)\n                         b 0.2\n                         ir (int (* 255.99 r))\n                         ig (int (* 255.99 g))\n                         ib (int (* 255.99 b))]]\n               (str ir \&quot; \&quot; ig \&quot; \&quot; ib \&quot;\\n\&quot;))]\n  {:header header :body pixels})&quot;, :offset 473, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(ns me.grison.raytraclj.core\n  (:require [me.grison.raytraclj.image :as img]))&quot;, :offset 78, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn ppm-header [width height]\n  (str \&quot;P3\\n\&quot; width \&quot; \&quot; height \&quot;\\n255\\n\&quot;))&quot;, :offset 74, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn pixel-line [line]\n  (str (interpose line \&quot; \&quot;) \&quot;\\n\&quot;))&quot;, :offset 58, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn pixel-line [r g b]\n  (str r \&quot; \&quot; g \&quot; \&quot; b \&quot;\\n\&quot;))&quot;, :offset 52, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(pixel-line 0 1 2)&quot;, :offset 18, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (int (* 255.99 (/ i nx)))\n                         g (int (* 255.99 (/ j ny)))\n                         b (int (* 255.99 0.2))]]\n               (pixel-line r g b))\n      body (clojure.string/join pixels)]\n  (img/save-jpg (str header body) \&quot;/mnt/c/temp/lol\&quot;))&quot;, :offset 435, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (int (* 255.99 (/ i nx)))\n                         g (int (* 255.99 (/ j ny)))\n                         b (int (* 255.99 0.2))]]\n               (pixel-line r g b))\n      body (clojure.string/join pixels)]\n  (print (str header body))\n  (img/save-jpg (str header body) \&quot;C:/temp/lol\&quot;))&quot;, :offset 459, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(+ 1 2)&quot;, :offset 7, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn load-ppm [^String path]\n  (println \&quot;Loading PPM: \&quot; path)\n  (with-open [in (io/input-stream (io/file path))]\n    (ImageIO/read in)))&quot;, :offset 137, :ns &quot;me.grison.raytraclj.image&quot;} {:command &quot;(defn save-ppm [^String ppm ^String path]\n  (println \&quot;Saving PPM: \&quot; path)\n  (spit path ppm))&quot;, :offset 92, :ns &quot;me.grison.raytraclj.image&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (int (* 255.99 (/ i nx)))\n                         g (int (* 255.99 (/ j ny)))\n                         b (int (* 255.99 0.2))]]\n               (pixel-line r g b))\n      body (clojure.string/join pixels)]\n  (img/save-jpg (str header body) \&quot;C:/temp/lol\&quot;))&quot;, :offset 431, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn save-jpg [^String ppm ^String path]\n  (save-ppm ppm (str path \&quot;.ppm\&quot;))\n  (Thread/sleep 500)\n  (store-jpeg (load-ppm (str path \&quot;.ppm\&quot;)) (str path \&quot;.jpg\&quot;)))&quot;, :offset 160, :ns &quot;me.grison.raytraclj.image&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (int (* 255.99 (/ i nx)))\n                         g (int (* 255.99 (/ j ny)))\n                         b (int (* 255.99 0.2))]]\n               (pixel-line r g b))\n      body (clojure.string/join pixels)\n      ppm (str header body)\n      _ (img/save-ppm ppm \&quot;C:/temp/lol\&quot;)\n      img (img/load-ppm \&quot;C:/temp/lol.ppm\&quot;)]\n  (println img)\n  (img/store-jpeg img \&quot;C:/temp/lol.jpg\&quot;))&quot;, :offset 551, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (int (* 255.99 (/ i nx)))\n                         g (int (* 255.99 (/ j ny)))\n                         b (int (* 255.99 0.2))]]\n               (pixel-line r g b))\n      body (clojure.string/join pixels)\n      ppm (str header body)\n      _ (img/save-ppm ppm \&quot;C:/temp/lol\&quot;)\n      _ (Thread/sleep 1000)\n      img (img/load-ppm \&quot;C:/temp/lol.ppm\&quot;)]\n  (println img)\n  (img/store-jpeg img \&quot;C:/temp/lol.jpg\&quot;))&quot;, :offset 579, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [nx 200\n      ny 100\n      header (str \&quot;P3\\n\&quot; nx \&quot; \&quot; ny \&quot;\\n255\\n\&quot;)\n      pixels (for [j (range (dec ny) -1 -1)\n                   i (range 0 nx)\n                   :let [r (int (* 255.99 (/ i nx)))\n                         g (int (* 255.99 (/ j ny)))\n                         b (int (* 255.99 0.2))]]\n               (pixel-line r g b))\n      body (clojure.string/join pixels)\n      ppm (str header body)\n      _ (img/save-ppm ppm \&quot;C:/temp/lol.ppm\&quot;)\n      _ (Thread/sleep 1000)\n      img (img/load-ppm \&quot;C:/temp/lol.ppm\&quot;)]\n  (println img)\n  (img/store-jpeg img \&quot;C:/temp/lol.jpg\&quot;))&quot;, :offset 583, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(img/load-ppm \&quot;C:/temp/lol.ppm\&quot;)&quot;, :offset 32, :ns &quot;user&quot;}], :remote [{:command &quot;(doseq [i (range 0 2)]\n  (println i))&quot;, :offset 37, :ns &quot;user&quot;} {:command &quot;(zero? 0.0)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(zero? 0)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(defn simple-background-and-sphere-surface []\n  (let [nx 10 ny 5\n        lower-left-corner [-2.0 -1.0 -1.0]\n        horizontal [4.0 0.0 0.0]\n        vertical [0.0 2.0 0.0]\n        origin [0.0 0.0 0.0]\n        world [(hitable/-&gt;Sphere [0 0 -1] 0.5)\n               (hitable/-&gt;Sphere [0 -100.5 -1] 100)]]\n    (raytrace nx ny\n              (for [j (range (dec ny) -1 -1)\n                    i (range 0 nx)\n                    :let [u (/ i nx)\n                          v (/ j ny)\n                          r (ray/make origin (vec/+ lower-left-corner\n                                                    (vec/+ (vec/* horizontal u)\n                                                           (vec/* vertical v))))\n                          p (ray/point-at-parameter r 2.0)\n                          col (color r world)\n                          ir (int (* 255.99 (vec/x col)))\n                          ig (int (* 255.99 (vec/y col)))\n                          ib (int (* 255.99 (vec/z col)))]]\n                (vec/string [ir ig ib]))\n              \&quot;/mnt/c/temp/background-sphere-surface-2.jpg\&quot;)))&quot;, :offset 1091, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(int 1.2799500127995E10)&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(unchecked-int 1.2799500127995E10)&quot;, :offset 34, :ns &quot;user&quot;} {:command &quot;(defn simple-background-and-sphere-surface []\n  (let [nx 200 ny 100\n        lower-left-corner [-2.0 -1.0 -1.0]\n        horizontal [4.0 0.0 0.0]\n        vertical [0.0 2.0 0.0]\n        origin [0.0 0.0 0.0]\n        world [(hitable/-&gt;Sphere [0 0 -1] 0.5)\n               (hitable/-&gt;Sphere [0 -100.5 -1] 100)]]\n    (raytrace nx ny\n              (for [j (range (dec ny) -1 -1)\n                    i (range 0 nx)\n                    :let [u (/ i nx)\n                          v (/ j ny)\n                          r (ray/make origin (vec/+ lower-left-corner\n                                                    (vec/+ (vec/* horizontal u)\n                                                           (vec/* vertical v))))\n                          p (ray/point-at-parameter r 2.0)\n                          col (color r world)\n                          ir (unchecked-int (* 255.99 (vec/x col)))\n                          ig (unchecked-int (* 255.99 (vec/y col)))\n                          ib (unchecked-int (* 255.99 (vec/z col)))]]\n                (vec/string [ir ig ib]))\n              \&quot;/mnt/c/temp/background-sphere-surface-2.jpg\&quot;)))&quot;, :offset 1124, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(me.grison.raytraclj.vec/- [-0.22792407799438733 0.11396203899719366 -0.5698101949859684] [0 0 -1])&quot;, :offset 99, :ns &quot;user&quot;} {:command &quot;(me.grison.raytraclj.vec/* [-0.22792407799438733 0.11396203899719366 0.4301898050140316] (/ 1 0.5))&quot;, :offset 99, :ns &quot;user&quot;} {:command &quot;(simple-background-and-sphere-surface)&quot;, :offset 38, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (loop [p (atom nil)]\n    (reset! p (vec/- \n               (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n               [1.0 1.0 1.0]))\n    (when (&gt;= (vec/squared-length @p) 1.0)\n      (recur))))&quot;, :offset 228, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(def random (Random.))\n(defn drand-48 []\n  (.nextFloat random))&quot;, :offset 63, :ns &quot;user&quot;} {:command &quot;(def random (java.util.Random.))&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(defn drand-48 []\n  (.nextFloat random))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(drand-48)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;\n(defn random-in-unit-sphere []\n  (loop [p (atom nil)]\n    (reset! p (vec/-\n                (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                [1.0 1.0 1.0]))\n    (when (&gt;= (vec/squared-length @p) 1.0)\n      (recur p))))&quot;, :offset 232, :ns &quot;user&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (loop [p (atom nil)]\n    (reset! p (vec/-\n                (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                [1.0 1.0 1.0]))\n    (when (&gt;= (vec/squared-length @p) 1.0)\n      (recur p))))&quot;, :offset 231, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(vec/-\n  (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n  [1.0 1.0 1.0])&quot;, :offset 72, :ns &quot;user&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (let [rand-vec #((vec/-\n                     (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                     [1.0 1.0 1.0]))\n        p (atom nil)]\n    (do\n      (reset! p (rand-vec))\n      (while (&gt;= (vec/squared-length @p) 1.0)\n        (reset! p (rand-vec))))))&quot;, :offset 299, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (let [rand-vec #(vec/-\n                    (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                    [1.0 1.0 1.0])\n        p (atom nil)]\n    (do\n      (reset! p (rand-vec))\n      (while (&gt;= (vec/squared-length @p) 1.0)\n        (reset! p (rand-vec))))))&quot;, :offset 295, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (let [rand-vec #(vec/-\n                    (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                    [1.0 1.0 1.0])\n        p (atom nil)]\n    (do\n      (reset! p (rand-vec))\n      (println @p)\n      (while (&gt;= (vec/squared-length @p) 1.0)\n        (reset! p (rand-vec))))))&quot;, :offset 314, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (let [rand-vec #(vec/-\n                    (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                    [1.0 1.0 1.0])\n        p (atom nil)]\n    (do\n      (reset! p (rand-vec))\n      (println @p)\n      (while (&gt;= (vec/squared-length @p) 1.0)\n        (reset! p (rand-vec))))\n    @p))&quot;, :offset 321, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn random-in-unit-sphere []\n  (let [rand-vec #(vec/-\n                    (vec/* [(drand-48) (drand-48) (drand-48)] 2.0)\n                    [1.0 1.0 1.0])\n        p (atom nil)]\n    (do\n      (reset! p (rand-vec))\n      (println @p)\n      (while (&gt;= (vec/squared-length @p) 1.0)\n        (reset! p (rand-vec))\n        (println @p)))\n    @p))&quot;, :offset 342, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(me.grison.raytraclj.core/random-in-unit-sphere)&quot;, :offset 48, :ns &quot;user&quot;} {:command &quot;(vec/• [1 1 1] [1 1 1])&quot;, :offset 23, :ns &quot;user&quot;} {:command &quot;(time (simple-background-and-sphere-surface-antialias))&quot;, :offset 55, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(:foo nil)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(+ 2 nil)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(map? 0.5)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;*e &quot;, :offset 3, :ns &quot;user&quot;} {:command &quot;(:res BLAH)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(:res @me.grison.raytraclj.core/BLAH)&quot;, :offset 37, :ns &quot;user&quot;} {:command &quot;@me.grison.raytraclj.core/BLAH&quot;, :offset 30, :ns &quot;user&quot;} {:command &quot;(* 5 3 2)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(simple-background-and-sphere-surface-antialias)&quot;, :offset 48, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(simple-background-and-sphere-metal)&quot;, :offset 36, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(def x (AtomicInteger. 0))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(.incrementAndGet x)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(.get x)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(def flames (flames/start! {:port 54321, :host \&quot;localhost\&quot;}))&quot;, :offset 61, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(int 965964000/3191)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(flames/stop! flames)&quot;, :offset 21, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(/ Math/PI 4)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(conj [0 1 2] 3)&quot;, :offset 16, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(defn make-world []\n  (let [world (atom [])\n        drand #(* (rand) (rand))]\n    (for [a (range -11 11)\n          b (range -11 11)\n          :let [choose-mat (rand)\n                center [(+ a (* 0.9 (rand))) 0.2 (+ b (* 0.9 (rand)))]]]\n      (if (&gt; (vec/length (vec/- center [4 0.2 0])) 0.9)\n        (cond\n          (&lt; choose-mat 0.8) ; diffuse\n          (swap! world conj (hitable/-&gt;Sphere center 0.2 (material/-&gt;Lambertian [(drand) (drand) (drand)])))\n\n          (&lt; choose-mat 0.95) ;metal\n          (swap! world conj (hitable/-&gt;Sphere center 0.2 (material/-&gt;Metal [(* 0.5 (inc (rand)))\n                                                                            (* 0.5 (inc (rand)))\n                                                                            (* 0.5 (rand))]\n                                                                           (rand))))\n          :else ;glass\n          (swap! world conj (hitable/-&gt;Sphere center 0.2 (material/-&gt;Dielectric 1.5)))\n          )))\n    (swap! world conj (hitable/-&gt;Sphere [0 1 0] 1.0 (material/-&gt;Dielectric 1.5)))\n    (swap! world conj (hitable/-&gt;Sphere [-4 1 0] 1.0 (material/-&gt;Lambertian [0.4 0.2 0.1])))\n    (swap! world conj (hitable/-&gt;Sphere [4 1 0] 1.0 (material/-&gt;Metal [0.7 0.6 0.5] 0.0)))\n    @world))&quot;, :offset 1268, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(make-world)&quot;, :offset 12, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(simple-background-and-sphere-dielectric)&quot;, :offset 41, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(time (simple-background-and-sphere-dielectric))&quot;, :offset 48, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(.availableProcessors (Runtime/getRuntime))&quot;, :offset 43, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(for [j (range (dec ny) -1 -1)\n      i (range 0 nx)] [i j])&quot;, :offset 59, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(doseq [j (range (dec 1) -1 -1)\n      i (range 0 nx)] [i j])&quot;, :offset 23} {:command &quot;(for [j (range (dec 10) -1 -1)\n      i (range 0 5)] [i j])&quot;, :offset 58, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def foo (BufferedImage. 100 100 BufferedImage/TYPE_INT_RGB))&quot;, :offset 61, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(.getData foo)&quot;, :offset 14, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;;(.setRGB foo 50 50 ())&quot;, :offset 23, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(&gt;&gt; 1 2)&quot;, :offset 8, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(bit-shift-left 1 2)&quot;, :offset 20, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(bit-shift-left 255 16)&quot;, :offset 23, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(bit-or (bit-shift-left 255 16) (bit-shift-left 128 8) 128)&quot;, :offset 59, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(.setRGB foo 50 50 (bit-or (bit-shift-left 255 16) (bit-shift-left 128 8) 128))&quot;, :offset 79, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(ImageIO/write foo \&quot;png\&quot; (File. \&quot;/mnt/c/temp/test.png\&quot;))&quot;, :offset 56, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(for [j (range (dec 4) -1 -1)\n      i (range 0 2)] {:i i :j j :c (bit-or (bit-shift-left 5 16)\n                                           (bit-shift-left 5 8)\n                                           3)})&quot;, :offset 206, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(.close foo)&quot;, :offset 12, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def truc (for [j (range (dec 4) -1 -1)\n      i (range 0 2)] {:i i :j j :c (bit-or (bit-shift-left 5 16)\n                                           (bit-shift-left 5 8)\n                                           3)}))&quot;, :offset 217, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;truc&quot;, :offset 4, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(doseq [i truc] (println \&quot;-&gt; \&quot; i))&quot;, :offset 34, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(final-scene)&quot;, :offset 13, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(for [j (range (dec 3) -1 -1)\n      i (range 0 3)] [j i])&quot;, :offset 57, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def px (for [j (range (dec 3) -1 -1)\n      i (range 0 3)] [j i]))&quot;, :offset 66, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map println px)&quot;, :offset 16, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(pmap println px)&quot;, :offset 17, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(vec [(* 2 (first %)) (inc (second %))]) px)&quot;, :offset 50, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(vector [(* 2 (first %)) (inc (second %))]) px)&quot;, :offset 53, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map (vector [(* 2 (first %)) (inc (second %))]) px)&quot;, :offset 52, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ (first %) (second %)) px)&quot;, :offset 34, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ %1 %2) px)&quot;, :offset 19, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(inc %) px)&quot;, :offset 17, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map type px)&quot;, :offset 13, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map count px)&quot;, :offset 14, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ 3 (count %)) px)&quot;, :offset 25, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ 3 (count %)) (vector px))&quot;, :offset 34, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(vector px)&quot;, :offset 11, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(into [] px)&quot;, :offset 12, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ 3 (count %)) (into [] px))&quot;, :offset 35, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(first [2 0])&quot;, :offset 13, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def px (for [j (range (dec 30) -1 -1)\n      i (range 0 30)] [j i]))&quot;, :offset 68, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map first (into [] px))&quot;, :offset 24, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(pmap first (into [] px))&quot;, :offset 25, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def px (for [j (range (dec 5) -1 -1)\n      i (range 0 5)] [j i]))&quot;, :offset 66, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ (first %) (last %)) px)&quot;, :offset 32, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;*e&quot;, :offset 2, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(defn blah [[a b]] (+ a b))&quot;, :offset 27, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(defn blah [a b] (+ a b))&quot;, :offset 25, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(defn blah [v] v)&quot;, :offset 17, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map blah px)&quot;, :offset 13, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def px (for [j (range (dec 5) -1 -1)\n      i (range 0 5)] {:j j :i i}))&quot;, :offset 72, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(def px (into [] px))&quot;, :offset 21, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;px&quot;, :offset 2, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(map #(+ (:j %) (:i %)) px)&quot;, :offset 27, :ns &quot;me.grison.raytraclj.vec&quot;} {:command &quot;(-&gt; px (map #(+ (:j %) (:i %))))&quot;, :offset 32, :ns &quot;me.grison.raytraclj.vec&quot;}]}}</component>
-  <component name="RunManager" selected="Clojure REPL.remote">
-    <configuration name="Unnamed" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+  <component name="ReplState" timestamp="1587405495263">{:repl-history {:ide [], :local [{:command &quot;(import '(com.aparapi.Kernel))&quot;, :offset 30, :ns &quot;user&quot;} {:command &quot;(import [com.aparapi.Kernel])&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(let [in-a (random-array 100)\n        in-b (random-array 100)\n        result (make-array Float/TYPE)\n        kernel (reify Kernel\n                 (run [] (let [i (.getGlobalId this)]\n                           (aset result i (+ (aget a i) (aget b i))))))\n        range (Range/create 100)]\n    (.execute kernel range))&quot;, :offset 318, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 100)\n        in-b (random-array 100)\n        result (make-array Float/TYPE)\n        kernel (extend Kernel\n                 (run [] (let [i (.getGlobalId this)]\n                           (aset result i (+ (aget a i) (aget b i))))))\n        range (Range/create 100)]\n    (.execute kernel range))&quot;, :offset 319, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(defn random-array [s]\n  (let [x (take s (random-sample 0.5 (repeat (rand))))]\n    (float-array x)))&quot;, :offset 100, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 100)\n        in-b (random-array 100)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 100)]\n    (.execute kernel range))&quot;, :offset 161, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 100)\n        in-b (random-array 100)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 100)]\n    (.execute kernel range)\n    (into [] (.result kernel)))&quot;, :offset 192, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-list 100)\n        in-b (random-list 100)\n        result (time (map + in-a in-b))]\n    \&quot;Done\&quot;)&quot;, :offset 112, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 100)\n        in-b (random-array 100)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 100)\n        _ (time (.execute kernel range))]\n    \&quot;Done\&quot;)&quot;, :offset 185, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-list 1000000)\n        in-b (random-list 1000000)\n        result (time (map + in-a in-b))]\n    \&quot;Done\&quot;)&quot;, :offset 120, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-list 1000000)\n        in-b (random-list 1000000)\n        result (time (vector (map + in-a in-b)))]\n    \&quot;Done\&quot;)&quot;, :offset 129, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-list 1000)\n        in-b (random-list 1000)\n        result (time (doall (map + in-a in-b)))]\n    \&quot;Done\&quot;)&quot;, :offset 122, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 1000)\n        in-b (random-array 1000)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 1000)\n        _ (time (.execute kernel range))]\n    \&quot;Done\&quot;)&quot;, :offset 188, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-list 1000000)\n        in-b (random-list 1000000)\n        result (time (doall (map + in-a in-b)))]\n    \&quot;Done\&quot;)&quot;, :offset 128, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 1000000)\n        in-b (random-array 1000000)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 1000000)\n        _ (time (.execute kernel range))]\n    \&quot;Done\&quot;)&quot;, :offset 197, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 100000000)\n        in-b (random-array 100000000)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 100000000)\n        _ (time (.execute kernel range))]\n    \&quot;Done with GPU\&quot;)&quot;, :offset 212, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-array 10000000)\n        in-b (random-array 10000000)\n        _ (println \&quot;Done creating samples\&quot;)\n        kernel (MyKernel. in-a in-b)\n        range (Range/create 10000000)\n        _ (println \&quot;Done creating Kernel\&quot;)\n        _ (time (.execute kernel range))]\n    \&quot;Done with GPU\&quot;)&quot;, :offset 296, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(let [in-a (random-list 10000000)\n        in-b (random-list 10000000)\n        _ (println \&quot;Done creating samples\&quot;)\n        result (time (doall (pmap + in-a in-b)))]\n    \&quot;Done with CPU parallelized\&quot;)&quot;, :offset 197, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(Device/getAll)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(Device.)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(Device/best)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(Device/bestACC)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(Device/bestGPU)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(Device/firstCPU)&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(Device/firstGPU)&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(Device/first com.aparapi.device.Device.TYPE/CPU)&quot;, :offset 49, :ns &quot;user&quot;} {:command &quot;(import com.aparapi.device.Device.TYPE)&quot;, :offset 39, :ns &quot;user&quot;} {:command &quot;(import com.aparapi.device.Device/TYPE)&quot;, :offset 39, :ns &quot;user&quot;} {:command &quot;(import com.aparapi.device.Device$TYPE)&quot;, :offset 39, :ns &quot;user&quot;} {:command &quot;(NativeLoader/load)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(Device/first Device$TYPE/CPU)&quot;, :offset 30, :ns &quot;user&quot;} {:command &quot;(Device/first Device$TYPE/GPU)&quot;, :offset 30, :ns &quot;user&quot;} {:command &quot;(time (final-scene 128 80 10 \&quot;/mnt/c/temp/final-ir-4.png\&quot;))&quot;, :offset 59, :ns &quot;me.grison.raytraclj.core&quot;} {:command &quot;(def grouped-thousands [34 758])\n(def qualifiers [\&quot;thousand\&quot; \&quot;million\&quot; \&quot;billion\&quot; \&quot;trillion\&quot;])&quot;, :offset 93, :ns &quot;user&quot;} {:command &quot;(def grouped-thousands [12 34 758])\n(def qualifiers [\&quot;thousand\&quot; \&quot;million\&quot; \&quot;billion\&quot; \&quot;trillion\&quot;])&quot;, :offset 96, :ns &quot;user&quot;} {:command &quot;(butlast (interleave grouped-thousands qualifiers))&quot;, :offset 51, :ns &quot;user&quot;} {:command &quot;(butlast (interleave grouped-thousands (reverse qualifiers)))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(butlast (interleave (reverse grouped-thousands) qualifiers))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(reverse (butlast (interleave (reverse grouped-thousands) qualifiers)))&quot;, :offset 71, :ns &quot;user&quot;} {:command &quot;(-&gt; grouped-thousands\n    reverse\n    (interleave qualifiers)\n    butlast\n    reverse)\n&quot;, :offset 86, :ns &quot;user&quot;} {:command &quot;(-&gt; [758]\n    reverse\n    (interleave qualifiers)\n    butlast\n    reverse)\n&quot;, :offset 74, :ns &quot;user&quot;} {:command &quot;(-&gt; [34 758]\n    reverse\n    (interleave qualifiers)\n    butlast\n    reverse)\n&quot;, :offset 78, :ns &quot;user&quot;} {:command &quot;(-&gt; [7 34 758]\n    reverse\n    (interleave qualifiers)\n    butlast\n    reverse)\n&quot;, :offset 79, :ns &quot;user&quot;} {:command &quot;(-&gt; [11 7 34 758]\n    reverse\n    (interleave qualifiers)\n    butlast\n    reverse)\n&quot;, :offset 82, :ns &quot;user&quot;} {:command &quot;(defn say-big-number\n  [num]\n  (let [words (-&gt;&gt; num\n                   grouped-thousands\n                   (map say-hundreds))\n        interwoven (interleave words thousands-qualifiers)\n        to-english (-&gt;&gt; interwoven\n                        butlast\n                        reverse\n                        (join \&quot; \&quot;))]\n    to-english))&quot;, :offset 339, :ns &quot;user&quot;}], :remote []}}</component>
+  <component name="RunManager" selected="Clojure REPL.Local">
+    <configuration name="Local" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <module name="raytraclj" />
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="INTELLIJ" />
@@ -58,6 +103,15 @@
       <setting name="workingDir" value="$PROJECT_DIR$" />
       <setting name="profiles" value="" />
       <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+      <module name="raytraclj" />
+      <setting name="host" value="localhost" />
+      <setting name="port" value="61790" />
+      <setting name="replType" value="NREPL" />
+      <setting name="configType" value="SPECIFY" />
       <setting name="fixLineNumbers" value="false" />
       <method v="2" />
     </configuration>
@@ -80,18 +134,9 @@
       <setting name="fixLineNumbers" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="remote" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
-      <module name="raytraclj" />
-      <setting name="host" value="localhost" />
-      <setting name="port" value="56584" />
-      <setting name="replType" value="NREPL" />
-      <setting name="configType" value="SPECIFY" />
-      <setting name="fixLineNumbers" value="false" />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Clojure REPL.Local" />
       <item itemvalue="Clojure REPL.Unnamed" />
-      <item itemvalue="Clojure REPL.remote" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -106,154 +151,66 @@
       </list>
     </option>
   </component>
-  <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b9f07ee3-7d48-422e-8842-6de6776735bb" name="Default Changelist" comment="" />
-      <created>1586604023044</created>
+      <changelist id="a435b798-879e-4571-b506-4fdfa557eb85" name="Default Changelist" comment="" />
+      <created>1586779238599</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586604023044</updated>
-      <workItem from="1586604027418" duration="49688000" />
+      <updated>1586779238599</updated>
+      <workItem from="1586779249661" duration="9353000" />
+      <workItem from="1586929738847" duration="601000" />
+      <workItem from="1586936366270" duration="24000" />
+      <workItem from="1586939686544" duration="1528000" />
+      <workItem from="1587042199298" duration="6000" />
+      <workItem from="1587045912639" duration="115000" />
+      <workItem from="1587046375122" duration="3427000" />
+      <workItem from="1587404263967" duration="1230000" />
     </task>
-    <task id="LOCAL-00001" summary="Chapter 1: output an image">
-      <created>1586607317337</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1586607317337</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Chapter 1: output an image">
-      <created>1586607343260</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1586607343260</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Chapter 2: vector">
-      <created>1586613022406</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1586613022406</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Chapter 3: Rays, a simple camera, and background">
-      <created>1586615269030</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1586615269030</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Chapter 4: Adding a sphere">
-      <created>1586616612413</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1586616612413</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Chapter 5: Surface normals and multiple objects">
-      <created>1586620769365</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1586620769365</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Chapter 5: Surface normals and multiple objects - part 2">
-      <created>1586637403076</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1586637403076</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Chapter 6: Antialiasing">
-      <created>1586638897196</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1586638897196</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Chapter 7: Diffuse Materials">
-      <created>1586642695476</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1586642695476</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Chapter 8: Metal">
-      <created>1586698983879</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1586698983879</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Chapter 9: Dielectrics">
-      <created>1586712281652</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1586712281652</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Chapter 10: Positionable camera">
-      <created>1586719783655</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1586719783655</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Chapter 11-12">
-      <created>1586728799681</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1586728799681</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Chapter 1: output an image" />
-    <MESSAGE value="Chapter 2: vector" />
-    <MESSAGE value="Chapter 3: Rays, a simple camera, and background" />
-    <MESSAGE value="Chapter 4: Adding a sphere" />
-    <MESSAGE value="Chapter 5: Surface normals and multiple objects" />
-    <MESSAGE value="Chapter 5: Surface normals and multiple objects - part 2" />
-    <MESSAGE value="Chapter 6: Antialiasing" />
-    <MESSAGE value="Chapter 7: Diffuse Materials" />
-    <MESSAGE value="Chapter 8: Metal" />
-    <MESSAGE value="Chapter 9: Dielectrics" />
-    <MESSAGE value="Chapter 10: Positionable camera" />
-    <MESSAGE value="Chapter 11-12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chapter 11-12" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1100" y="642" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586730465321">
+    <state x="1226" y="541" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587404820575">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="1100" y="642" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.2560.1400@0.40.2560.1400" timestamp="1586730465321" />
-    <state x="1281" y="582" width="977" height="802" key="CommitChangelistDialog2" timestamp="1586728799258">
+    <state x="1226" y="541" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.2560.1400@0.40.2560.1400" timestamp="1587404820575" />
+    <state x="361" y="862" key="#com.intellij.ide.util.MemberChooser" timestamp="1586780508912">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="1281" y="582" width="977" height="802" key="CommitChangelistDialog2/0.40.2560.1400@0.40.2560.1400" timestamp="1586728799258" />
-    <state x="1244" y="610" key="SettingsEditor" timestamp="1586717413537">
+    <state x="361" y="862" key="#com.intellij.ide.util.MemberChooser/0.40.2560.1400@0.40.2560.1400" timestamp="1586780508912" />
+    <state x="1286" y="774" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586780881514">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="1244" y="610" key="SettingsEditor/0.40.2560.1400@0.40.2560.1400" timestamp="1586717413537" />
-    <state x="1257" y="590" key="Vcs.Push.Dialog.v2" timestamp="1586637404231">
+    <state x="1286" y="774" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.2560.1400@0.40.2560.1400" timestamp="1586780881514" />
+    <state x="1196" y="503" width="1159" height="937" key="CommitChangelistDialog2" timestamp="1587404672876">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="1257" y="590" key="Vcs.Push.Dialog.v2/0.40.2560.1400@0.40.2560.1400" timestamp="1586637404231" />
-    <state x="1350" y="739" width="588" height="488" key="find.popup" timestamp="1586607528255">
+    <state x="1196" y="503" width="1159" height="937" key="CommitChangelistDialog2/0.40.2560.1400@0.40.2560.1400" timestamp="1587404672876" />
+    <state x="637" y="477" width="1815" height="845" key="DiffContextDialog" timestamp="1587405369478">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="1350" y="739" width="588" height="488" key="find.popup/0.40.2560.1400@0.40.2560.1400" timestamp="1586607528255" />
-    <state x="956" y="722" width="687" height="678" key="search.everywhere.popup" timestamp="1586728309951">
+    <state x="637" y="477" width="1815" height="845" key="DiffContextDialog/0.40.2560.1400@0.40.2560.1400" timestamp="1587405369478" />
+    <state x="1325" y="659" key="FileChooserDialogImpl" timestamp="1587405337875">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="956" y="722" width="687" height="678" key="search.everywhere.popup/0.40.2560.1400@0.40.2560.1400" timestamp="1586728309951" />
+    <state x="1325" y="659" key="FileChooserDialogImpl/0.40.2560.1400@0.40.2560.1400" timestamp="1587405337875" />
+    <state x="1067" y="648" key="Vcs.Push.Dialog.v2" timestamp="1587404448895">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1067" y="648" key="Vcs.Push.Dialog.v2/0.40.2560.1400@0.40.2560.1400" timestamp="1587404448895" />
+    <state x="1006" y="728" key="new project wizard" timestamp="1586780763744">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1006" y="728" key="new project wizard/0.40.2560.1400@0.40.2560.1400" timestamp="1586780763744" />
+    <state x="1239" y="761" width="687" height="678" key="search.everywhere.popup" timestamp="1586779332227">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1239" y="761" width="687" height="678" key="search.everywhere.popup/0.40.2560.1400@0.40.2560.1400" timestamp="1586779332227" />
   </component>
 </project>

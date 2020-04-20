@@ -3,15 +3,10 @@
             [me.grison.raytraclj.ray :as ray]))
 
 (defn random-in-unit-sphere []
-  (let [rand-vec #(vec/-
-                    (vec/* [(rand) (rand) (rand)] 2.0)
-                    [1.0 1.0 1.0])
-        p (atom nil)]
-    (do
-      (reset! p (rand-vec))
-      (while (>= (vec/squared-length @p) 1.0)
-        (reset! p (rand-vec))))
-    @p))
+  (loop [p (vec/- (vec/* [(rand) (rand) (rand)] 2.0) [1.0 1.0 1.0])]
+    (if (> (vec/squared-length p) 1.0)
+      p
+      (recur (vec/- (vec/* [(rand) (rand) (rand)] 2.0) [1.0 1.0 1.0])))))
 
 (defprotocol Material
   (scatter [this r-in rec]))

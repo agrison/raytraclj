@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: nrepl:0.5.3">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/nrepl/nrepl/0.5.3/nrepl-0.5.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: me.grison.raytraclj/my-kernel:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/me/grison/raytraclj/my-kernel/1.0-SNAPSHOT/my-kernel-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

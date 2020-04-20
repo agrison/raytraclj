@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: org.scala-lang/scala-library:2.13.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
