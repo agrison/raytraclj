@@ -4,7 +4,9 @@ I've been implementing the book [Ray Tracing in One Weekend](https://raytracing.
 
 There's one branch by chapter, the final one is the **playing** branch which uses multi threading to speed things up.
 
-The final scene takes around 35 minutes to render in 1280x800px.A
+The final scene takes around 35 minutes to render in 1280x800px.
+
+![](images/final-ir.png)
 
 Here are some samples:
 
