@@ -1,14 +1,6 @@
 (ns me.grison.raytraclj.vec
   (:require [clojure.core :as clj]))
 
-(defn string
-  ([v] (string v false))
-  ([[a b c] line-feed?]
-   (str a " " b " " c " " (when line-feed? "\n"))))
-
-(defn read [^String s]
-  (clojure.string/split s #"\s+"))
-
 (defn mute [op
             [^float x1 ^float y1 ^float z1]
             [^float x2 ^float y2 ^float z2]]

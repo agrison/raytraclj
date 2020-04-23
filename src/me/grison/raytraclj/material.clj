@@ -22,7 +22,6 @@
   Material
   (scatter [this r-in rec]
     (let [fuzz (if (< f 1) f 1)
-          ;_ (println "Reflect? -> direction: " (:direction r-in) " normal: " (:normal rec))
           reflected (vec/reflect (vec/unit-vector (:direction r-in)) (:normal rec))
           scattered (ray/make (:p rec) (vec/+ reflected (vec/* (random-in-unit-sphere) fuzz)))
           final (vec/• (:direction scattered) (:normal rec))]

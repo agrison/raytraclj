@@ -12,20 +12,19 @@
 (defrecord Sphere [center radius material]
   Hitable
   (hit [this r t-min t-max]
-      (let [;_ (println "r: " r " origin: " (ray/origin r) " this: " this)
-            oc (vec/- (ray/origin r) (:center this))
-            a (vec/squared-length (ray/direction r))
-            half-b (vec/• oc (ray/direction r))
-            c (- (vec/squared-length oc) (* (:radius this) (:radius this)))
-            discriminant (- (* half-b half-b) (* a c))]
-        (when (pos? discriminant)
-          (let [root (Math/sqrt discriminant)
-                temp (/ (- (- half-b) root) a)]
-            (if (and (< temp t-max) (> temp t-min))
-              (hit-record r temp (:center this) (:radius this) (:material this))
-              (let [temp (/ (+ (- half-b) root) a)]
-                (when (and (< temp t-max) (> temp t-min))
-                  (hit-record r temp (:center this) (:radius this) (:material this))))))))))
+    (let [oc (vec/- (ray/origin r) (:center this))
+          a (vec/squared-length (ray/direction r))
+          half-b (vec/• oc (ray/direction r))
+          c (- (vec/squared-length oc) (* (:radius this) (:radius this)))
+          discriminant (- (* half-b half-b) (* a c))]
+      (when (pos? discriminant)
+        (let [root (Math/sqrt discriminant)
+              temp (/ (- (- half-b) root) a)]
+          (if (and (< temp t-max) (> temp t-min))
+            (hit-record r temp (:center this) (:radius this) (:material this))
+            (let [temp (/ (+ (- half-b) root) a)]
+              (when (and (< temp t-max) (> temp t-min))
+                (hit-record r temp (:center this) (:radius this) (:material this))))))))))
 
 (defn hits [world r t-min t-max]
   (let [closest-so-far (atom t-max)

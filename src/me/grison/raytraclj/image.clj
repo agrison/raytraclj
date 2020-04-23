@@ -22,6 +22,4 @@
     (ImageIO/read in)))
 
 (defn save-jpg [^String ppm ^String path]
-  ;(save-ppm ppm (str path ".ppm"))
-  ;(Thread/sleep 500)
   (store-jpeg (ppm->image ppm) path))
